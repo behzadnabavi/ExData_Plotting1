@@ -1,0 +1,6 @@
+png("plot2.png",width= 6, height = 6,units= "in", res= 80)
+tab1<-read.table("household_power_consumption.txt",skip=66637, nrows = 2880, sep = ";", col.names = c("Date","Hour","Active Power", "Reactive Power", "Voltage","Intensity", "S M 1", "S M 2", "S M 3"))
+plot(1:2880,tab1$Active.Power,type = "l", xlab = " ", ylab="Global Active Power (kilowatts)",xaxt="n")
+axis(1, at=c(1,1440,2880), labels=c("Thu","Fri","Sat"))
+#dev.copy(png,'plot2.png')
+dev.off()
